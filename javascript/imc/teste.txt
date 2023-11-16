@@ -1,0 +1,35 @@
+var resultado;
+        function IMC(peso, altura){
+            resultado = peso / (altura**2)
+            
+
+            if (resultado < 16) {
+                console.log("Inválido.")
+            }
+		
+		else if (resultado >= 16 && resultado <= 16,9) {
+                console.log("Muito abaixo do peso.")
+            }
+
+		
+		else if (resultado >= 17 && resultado <= 18.4){
+                    console.log("Abaixo do peso.")
+                }
+
+                else if (resultado >= 18.5 && resultado <= 24.9){
+                    console.log("Peso normal.")
+                }
+                else if (resultado >= 25 && resultado <= 29.9){
+                    console.log("Acima do peso.")
+                }
+                else if (resultado >= 30 && resultado <= 34.9){
+                    console.log("Obesidade classe I.")
+                }
+                else if (resultado >= 35 && resultado <= 40){
+                    console.log("Obesidade classe II.")
+                }
+                else if (resultado > 40){
+                    console.log(""Obesidade classe III".")
+                }
+               
+        }

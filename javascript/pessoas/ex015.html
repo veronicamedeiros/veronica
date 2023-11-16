@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: bisque;
+        }
+        section{
+            background-color: white;
+            border: 1px solid black;
+            width: 460px;
+            padding: 10px;
+            margin: auto;
+            border-radius: 5px;
+        }
+        img{
+            display: block;
+            margin: auto;
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+        }
+        input, label{
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <label for="">Ano de Nascimento</label>
+        <input type="number" id="year">
+        <br>
+        <label for="sexo" name="sexo"s>Sexo</label>
+        <input type="radio" value="feminino" id="f" name="radsex"> feminino
+        <input type="radio" value="masculino" id="m" name="radsex"> masculino
+        <br>
+        <input type="button" value="Verificar" onclick="verificar()">
+        <div id="resultado">...</div>
+        <img src="https://images.pexels.com/photos/5428830/pexels-photo-5428830.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="" id="foto">
+    </section>
+    <script>
+        function verificar(){
+            var txtano = document.getElementById('year')
+            var ano = Number(txtano.value)
+            var agora = new Date()
+            var anoatual = agora.getFullYear()
+            var idade = anoatual - ano
+            var sex = document.getElementsByName('radsex')
+
+
+            if (ano < 0 || ano >  anoatual){
+                window.alert('Insira um ano válido')
+            }else if (idade < 12 && sex[0].checked){
+                foto.src = 'imagens/menina.jpeg'
+                resultado.innerHTML = (`Detectamos menina com ${idade} ano(s)`)       
+            }else if (idade < 12 && sex[1].checked){
+                foto.src = 'imagens/menino.jpeg'
+                resultado.innerHTML = (`Detectamos menino com ${idade} ano(s)`)   
+   
+            }else if (idade < 18 && sex[0].checked){
+                foto.src = 'imagens/adolescentemenina.jpeg'
+                resultado.innerHTML = (`Detectamos uma adolescente com ${idade} anos`) 
+            }else if (idade < 18 && sex[1].checked){
+                foto.src = 'imagens/adolescentemenino.jpeg'
+                resultado.innerHTML = (`Detectamos um adolescente com ${idade} anos`)
+
+            } else if (idade < 60 && sex[0].checked){
+                foto.src = 'imagens/adulta.jpeg'
+                resultado.innerHTML = (`Detectamos mulher com ${idade} anos`)
+            } else if (idade < 60 && sex[1].checked){
+                foto.src = 'imagens/adulto.jpeg'
+                resultado.innerHTML = (`Detectamos homem com ${idade} anos`)
+
+            } else if (idade > 60 && sex[0].checked){
+                foto.src = 'imagens/idosa.jpeg'
+                resultado.innerHTML = (`Detectamos idosa com ${idade} anos`) 
+            } else if (idade > 60 && sex[1].checked){
+                foto.src = 'imagens/idoso.jpeg'
+                resultado.innerHTML = (`Detectamos idoso com ${idade} anos`) 
+            }
+        }        
+        
+
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@500&display=swap');
+        *{
+            padding: 0px;
+            margin: 0px;
+            font-family: 'Dosis', Verdana, 'Geneva', Tahoma sans-serif;
+            font-size: 18px;
+        }
+        body{
+            background-color: rgb(208, 224, 210);
+        }
+        form{
+            background-color: rgb(189, 226, 195);
+            max-width: 700px;
+            margin: auto;
+            padding: 10px;
+            margin-top: 15px;
+            font-size: 22px;
+            border: 1px solid green;
+            border-radius: 8px;
+            box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.315);
+        }
+        fieldset{
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 5px;
+            box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.116);
+        }
+        input{
+            border-radius: 5px;
+        }
+        input#submit{
+            display: block;
+            padding: 10px;
+            margin: auto;
+            margin-top: 15px;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: rgb(2, 31, 11);
+            border-radius: 13px;
+        }
+        input,select,label{
+            display: inline-block;
+            margin-bottom: 12px;
+            margin-right: 15px;
+        }
+        p{
+            margin-top: 12px;
+        }
+        textarea{
+            display: block;
+            margin: auto;
+            color: rgb(5, 39, 13);
+        }    
+        h1{
+            font-variant: small-caps;
+            margin: auto;
+            padding: 10px;
+            font-size: 38px;
+            text-align: center;
+            text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.336);
+            color: rgb(9, 75, 9);
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <h1>Agendamento de Exames</h1>
+    <form action="#">
+
+        <fieldset>
+            <legend>Dados pessoais</legend>
+                <label for="name">Nome:</label>
+                    <input type="text" name="name" id="name" maxlength="28" size="25">
+                <label for="age">Idade:</label>
+                    <input type="text" maxlength="3" size="3">
+                <br>
+                <label for="email">E-mail:</label>
+                    <input type="email" maxlength="55" required>
+                <label for="tel">Celular:</label>
+                    <input type="tel" placeholder="(11)98888-8888" pattern="[0-9]" maxlength="14" required>
+        </fieldset>
+        <fieldset>
+            <legend>Agendamento de exame</legend>
+                <label for="exame">Selecione o exame que deseja realizar:</label>
+                    <input list="f_exames" autofocus>
+                        <datalist id="f_exames">
+                            <option value="btu1">Biopsias por Tomografia e Ultrassom</option>
+                            <option value="ctl2">Cintilografia</option>  
+                            <option value="colo3">Colonoscopia</option>      
+                            <option value="dsm4">Densitometria Óssea</option>        
+                            <option value="eco5">Ecocardiografia</option>
+                            <option value="end6">Endoscopia</option>
+                            <option value="mamod7">Mamografia Digital</option>
+                            <option value="radd8">Radiologia Digital</option>
+                            <option value="resm9">Ressonância Magnética</option>
+                            <option value="tomc10">Tomografia Computadorizada</option>
+                            <option value="ultr11">Ultrassonografia</option>
+                            <option value="ultrd12">Ultrassonografia com Doppler</option>
+                            <option value="ultre13">Ultrassom com Elastografia</option>
+                        </datalist>
+            <br>
+            <label>Selecione a Unidade em que deseja realizar o exame:</label>
+                <select name="f_unidade" id="f_unidade">
+                    <option value="--">--</option>
+                    <option value="lapa">São Francisco Lapa</option>
+                    <option value="jardim">São Francisco Jardim</option>
+                    <option value="paulista">São Francisco Paulista</option>
+                    <option value="abc">São Francisco Grande ABC</option>
+                </select>  
+            <br>
+            <label for="mes">Em qual mês deseja realizar o exame?</label> 
+                <input type="month">
+            <br>
+            <label name="hora" for="hora">Qual o melhor horário para realização do exame?</label>
+                <input type="time" id="hora" min="9:00" max="17:00" name="hora">
+            <br>
+            <label for="comentario">Observações</label>
+            <br>
+                <textarea name="coment" id="coment" cols="50" rows="5" maxlength="200" placeholder="Exemplo: Não posso realizar o exame de sexta-feira."></textarea>
+             <p>Em breve você receberá um e-mail com a data do exame, é necessário sua confirmação por e-mail. Caso haja algum impreivsto, não esqueça de desmarcar a consulta.</p>   
+        </fieldset>
+            <input type="submit" name="submit" id="submit" value="Enviar informações">
+    </form>
+
+</body>
+</html>

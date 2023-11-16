@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            border: 1px solid black;
+            width: 280px;
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+   <h1>Sistema de Multas</h1>
+   <p>Insira sua velocidade:</p> 
+   <input type="number" name="vel" id="vel"> km/h
+   <input type="button" value="Enviar" onclick="enviar()">
+   <div id="res">
+        Resposta
+   </div>
+   
+   <script>
+       function enviar(){
+           velo = Number(vel.value)
+           res = document.getElementById('res')
+           if (velo > 100){
+               res.innerHTML = (`Você foi multado`)
+           } else{
+               res.innerHTML = (`Você não foi multado`)
+           }
+        }
+   </script>
+</body>
+</html>
