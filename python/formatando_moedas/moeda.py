@@ -29,5 +29,5 @@ def resumo(r=0, aumento=10, reducao=10):
     print(f'{"Preço analisado:":20} {moeda(r):>}')
     print(f'{"Metade do preço:":20} {metade(r, True):>}')
     print(f'{"Dobro dO preço":20} {dobro(r, True):>}')
-    print(f'{aumento}% de aumento: {aumentar(r, aumento, True):<13}')
+    print(f'{aumento}% de aumento: {aumentar(r, aumento, True):>14}')
     print(f'{reducao}% de redução: {reduzir(r, reducao, True):>13}')
